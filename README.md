@@ -1,7 +1,7 @@
 # <game_talk>　
 
 ## サイト概要
-https://docs.google.com/spreadsheets/d/1QnMZPV6EFMJwpkDIcapuW98Z2OE9ERPVkdCFkqKn2pk/edit?usp=sharing
+
 
 ### サイトテーマ
 <ユーザー同士がゲームの話題で盛り上がるコミュニティサイト>
@@ -16,7 +16,7 @@ https://docs.google.com/spreadsheets/d/1QnMZPV6EFMJwpkDIcapuW98Z2OE9ERPVkdCFkqKn
 <ゲームについて困ったことなどについて調べたいとき、面白いネタや情報などを投稿するなど>
 
 ## 設計書
-<...>
+<https://docs.google.com/spreadsheets/d/1QnMZPV6EFMJwpkDIcapuW98Z2OE9ERPVkdCFkqKn2pk/edit?usp=sharing>
 
 ## 開発環境
 - OS：Linux(CentOS)
