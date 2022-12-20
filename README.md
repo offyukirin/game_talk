@@ -1,4 +1,4 @@
-# <game_talk>　
+# game_talk　
 
 ## サイト概要
 
@@ -18,9 +18,9 @@
 
 ### 主な利用シーン
 - ゲームの攻略に困ったとき
-- 小ネタ、裏技などの情報を共有する
-- ゲームを知らない人でもこのサイトを見て楽しめる
-- ゲームを購入するときの指標にする
+- 小ネタ、裏技などの情報を共有するとき
+- 暇をつぶしたい
+- ゲームを購入するとき
 
 ## 設計書
 https://docs.google.com/spreadsheets/d/1QnMZPV6EFMJwpkDIcapuW98Z2OE9ERPVkdCFkqKn2pk/edit?usp=sharing
