@@ -1,0 +1,53 @@
+<div>
+
+　<p><%= image_tag @post.user.get_profile_image(50,50) %></p>
+
+　<p>ユーザーネーム：<%= @post.user.name %></p>
+
+  <p>タイトル：<%= @post.title %></p>
+
+  <p>内容：<%= @post.content %></p>
+
+　<p>投稿日：<%= @post.created_at.strftime('%Y/%m/%d') %></p>
+
+  <% if @post.user == current_user %>
+    <%= link_to "削除", user_post_path(@post), method: :delete %>
+  <% end %>
+  
+  <% if @post.favorited_by?(current_user) %>
+    <p>
+      <%= link_to user_post_favorites_path(@post), method: :delete do %>
+        ♥<%= @post.favorites.count %> いいね
+      <% end %>
+    </p>
+    <% else %>
+    <p>
+      <%= link_to user_post_favorites_path(@post), method: :post do %>
+        ♡<%= @post.favorites.count %> いいね
+      <% end %>
+    </p>
+  <% end %>
+  
+</div>
+
+<div>
+  <!--コメント欄-->
+  <p>ユーザーコメント</p>
+  <p>コメント件数：<%= @post.post_comments.count %></p>
+  <% @post.post_comments.each do |post_comment| %>
+    <p><%= image_tag post_comment.user.get_profile_image(30,30) %></p>
+    <%= post_comment.user.name %>
+    <%= post_comment.created_at.strftime('%Y/%m/%d') %><%= post_comment.comment %>
+    <% if post_comment.user == current_user %>
+      <%= link_to "削除", user_post_post_comment_path(post_comment.post, post_comment), method: :delete %>
+    <% end %>
+  <% end %>
+</div>
+
+<!--コメントフォーム-->
+<div>
+  <%= form_with model: [@post_image, @post_comment], url: user_post_post_comments_path(@post.id), method: :post do |f| %>
+    <%= f.text_area :comment, rows: '5', placeholder: "コメントをここに" %>
+    <%= f.submit "送信する" %>
+  <% end %>
+</div>

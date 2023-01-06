@@ -1,0 +1,17 @@
+<h1>投稿一覧</h1>
+
+<% @post.each do |post| %>
+
+<div>
+  <p><%= image_tag post.user.get_profile_image(100,100) %></p>
+  <p>ユーザーネーム：<%= post.user.name %></p>
+
+  <%= link_to user_post_path(post.id) do %>
+  <p>タイトル：<%= post.title %></p>
+  <% end %>
+
+  <p>内容：<%= post.content %></p>
+  <p><%= link_to "#{post.post_comments.count} コメント", user_post_path(post.id) %></p>
+
+</div>
+<% end %>
