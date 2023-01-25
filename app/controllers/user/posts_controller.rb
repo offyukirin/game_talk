@@ -16,7 +16,8 @@ class User::PostsController < ApplicationController
   end
 
   def index
-    @post = Post.all
+    @post = Post.page(params[:page])
+    @post = params[:tag_id].present? ? Tag.find(params[:tag_id]).posts : Post.all
   end
 
   def show
@@ -26,7 +27,7 @@ class User::PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    @post.delete
+    @post.destroy
     redirect_to user_posts_path
   end
 
@@ -35,7 +36,7 @@ class User::PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :content)
+    params.require(:post).permit(:title, :content, tag_ids: [])
   end
 
 

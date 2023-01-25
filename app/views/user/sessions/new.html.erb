@@ -1,4 +1,10 @@
-<h2>Log in</h2>
+<div class="card-list-container py-5">
+
+  <div class="card w-50 mx-auto mt-4 shadow-lg">
+  
+    <div class="card-body">
+      
+<h2>ログイン</h2>
 
 <%= form_with model: @user, url: user_session_path do |f| %>
 
@@ -25,3 +31,9 @@
 <% end %>
 
 <%= render "user/shared/links" %>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,2 +1,31 @@
-<h1>Homes#top</h1>
-<p>Find me in app/views/homes/top.html.erb</p>
+<div class="card-list-container py-5">
+
+  <div class="card w-50 mx-auto mt-4 shadow-lg">
+  
+    <div class="card-body">
+
+<h1>Game_talkとは？</h1>
+<p>ユーザー同士がゲームの話題で盛り上がるコミュニティサイト</p>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<div class="card-list-container py-5">
+
+  <div class="card w-50 mx-auto mt-4 shadow-lg">
+  
+    <div class="card-body">
+
+<%= link_to '投稿一覧', user_posts_path, class: 'nav-link text-dark' %>
+
+<%= link_to '投稿フォーム', new_user_post_path, class: 'nav-link text-dark' %>
+
+    </div>
+
+  </div>
+
+</div>

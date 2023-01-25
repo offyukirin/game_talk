@@ -3,14 +3,38 @@ Rails.application.routes.draw do
 root to: "homes#top"
 get "/homes/about" => "homes#about", as: "about"
 
+get "search" => "searches#search"
+
+
 namespace :user do
+
   resources :posts, only: [:new, :create, :index, :show, :destroy] do
-    resource :favorites, only: [:create, :destroy]
+    resources :favorites, only: [:create, :destroy]
     resources :post_comments, only: [:create, :destroy]
   end
-  resources :users, only: [:show, :edit]
+
+  resources :users, only: [:show, :edit] do
+    member do
+      get :favorites
+    end
+  end
+
 end
 
+namespace :admin do
+  
+  resources :users, only: [:index, :show, :edit, :destroy] do
+    member do
+        get "unsubscribe"
+        patch "withdraw"
+      end
+  end
+  resources :posts, only: [:new, :create, :index, :show, :destroy] do
+  resources :favorites, only: [:create, :destroy]
+  resources :post_comments, only: [:create, :destroy]
+    
+  end
+end
 
  # ユーザー用
 # URL /user/sign_in ...

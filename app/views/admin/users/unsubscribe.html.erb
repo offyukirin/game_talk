@@ -1,0 +1,22 @@
+<div class="card-list-container py-5">
+
+  <div class="card w-50 mx-auto mt-4 shadow-lg">
+
+    <div class="card-body">
+
+  <h2>本当に退会させますか？</h2>
+
+  <div>
+    <p>退会させる場合は、『退会させる』をクリックしてください。</p>
+  </div>
+
+  <div>
+    <%= link_to '退会させない', admin_users_path %>
+    <%= link_to "退会させる", withdraw_admin_user_path(@user), method: :PATCH, data: {confirm: "本当に退会してもよろしいですか？"}, class: "glyphicon glyphicon-home btn btn-danger" %>
+  </div>
+
+    </div>
+
+  </div>
+
+</div>
