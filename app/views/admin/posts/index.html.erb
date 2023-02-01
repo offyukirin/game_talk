@@ -43,11 +43,22 @@
 
          <p class="card-title">
 
-  　　　　<span><i class="fas fa-user"></i><%= post.user.name %></span>
+          <span>
+            <i class="fas fa-user"></i>
+            <%= link_to admin_user_path(post.user.id), class:"text-dark" do %>
+              <%= post.user.name %>
+              <% end %>
+            </span>
 
-            <%= link_to admin_post_path(post.id), class:"text-dark" do %>
-  　　　　　　　　<strong><i class="far fa-flag"></i><span><%= post.title %></span></strong>
-  　         <% end %>
+            <strong>
+              <i class="far fa-flag"></i>
+              <%= link_to admin_post_path(post.id), class:"text-dark" do %>
+                <span>
+                  <%= post.title %>
+                </span>
+               <% end %>
+            </strong>
+
 
    　　　</p>
 

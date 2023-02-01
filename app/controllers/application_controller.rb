@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    # 登録に必要な情報の
+    # 登録に必要な情報の設定
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
   end
 

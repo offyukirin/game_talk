@@ -12,7 +12,7 @@
 
   <div>
     <%= link_to '退会させない', admin_users_path %>
-    <%= link_to "退会させる", withdraw_admin_user_path(@user), method: :PATCH, data: {confirm: "本当に退会してもよろしいですか？"}, class: "glyphicon glyphicon-home btn btn-danger" %>
+    <%= link_to "退会させる", withdraw_admin_user_path(@user.id), method: :destroy, data: {confirm: "本当に退会させてもよろしいですか？"}, class: "glyphicon glyphicon-home btn btn-danger" %>
   </div>
 
     </div>

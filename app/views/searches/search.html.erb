@@ -1,24 +1,56 @@
+<div class="card-list-container py-5">
+
+  <div class="card w-50 mx-auto mt-4 shadow-lg">
+
+    <div class="card-body">
+
 <h2>検索結果</h2>
 
 <table class="table table-hover table-inverse">
+
   <!--検索対象モデルがUserの時 -->
   <% if @range == "User" %>
     <tbody>
+
       <% @users.each do |user| %>
+
         <tr>
-          <td><%= user.name %></td>
+          <td>
+            <%= link_to user_user_path(user.id), class:"text-dark" do %>
+              <%= user.name %>
+            <% end %>
+          </td>
         </tr>
+
       <% end %>
+
     </tbody>
+
   <% else %>
+
     <!--検索対象モデルがUserではない時(= 検索対象モデルがPostの時) -->
     <tbody>
       <% @posts.each do |post| %>
         <tr>
-          <td><%= post.title %></td>
+          <td>
+            <%= link_to user_post_path(post.id), class:"text-dark" do %>
+              <%= post.title %>
+            <% end %>
+          </td>
+
           <td><%= post.content %></td>
+
         </tr>
+
       <% end %>
+
     </tbody>
+
   <% end %>
 </table>
+
+    </div>
+
+  </div>
+
+</div>

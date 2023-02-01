@@ -13,26 +13,28 @@ namespace :user do
     resources :post_comments, only: [:create, :destroy]
   end
 
-  resources :users, only: [:show, :edit] do
+  resources :users, only: [:show, :edit, :update] do
     member do
       get :favorites
     end
+
   end
 
 end
 
 namespace :admin do
-  
+
   resources :users, only: [:index, :show, :edit, :destroy] do
     member do
         get "unsubscribe"
         patch "withdraw"
+        post "withdraw"
       end
   end
   resources :posts, only: [:new, :create, :index, :show, :destroy] do
   resources :favorites, only: [:create, :destroy]
   resources :post_comments, only: [:create, :destroy]
-    
+
   end
 end
 
