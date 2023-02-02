@@ -17,4 +17,4 @@ Tag.create([
     { name: 'カード'},
     ])
 
-Admin.create!(email: 'kashi0916@gmail.com', password: 'Yuyu09160315')
+Admin.create!(email: 'admin0001@gmail.com', password: 'Admin0001')
