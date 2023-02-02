@@ -19,6 +19,7 @@ class Post < ApplicationRecord
   def self.looks(search, word)
     if search == "perfect_match"
       @post = Post.where("title LIKE?","#{word}")
+      
     elsif search == "forward_match"
       @post = Post.where("title LIKE?","#{word}%")
     elsif search == "backward_match"
@@ -30,7 +31,7 @@ class Post < ApplicationRecord
     end
   end
 
-  def favorited_by?(user_id)
+  def favorited_by?(user)
     favorites.exists?(user_id: user.id)
   end
 

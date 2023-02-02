@@ -9,7 +9,7 @@ get "search" => "searches#search"
 namespace :user do
 
   resources :posts, only: [:new, :create, :index, :show, :destroy] do
-    resources :favorites, only: [:create, :destroy]
+    resource :favorites, only: [:create, :destroy]
     resources :post_comments, only: [:create, :destroy]
   end
 

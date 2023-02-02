@@ -15,24 +15,34 @@
 
   　　</div>
 
-  　　<div class="col-10">
+      <div class="col-10">
 
-         <p class="card-title">
+        <p class="card-title">
 
-  　　　　<span><i class="fas fa-user"></i><%= post.user.name %></span>
+          <span>
+            <i class="fas fa-user"></i>
+            <%= link_to user_user_path(post.user.id), class:"text-dark" do %>
+            <%= post.user.name %>
+            <% end %>
+          </span>
 
-            <%= link_to user_post_path(post.id), class:"text-dark" do %>
-  　　　　　　　　<strong><i class="far fa-flag"></i><span><%= post.title %></span></strong>
+
+            <i class="far fa-flag"></i>
+            <span>
+              <%= link_to user_post_path(post.id), class:"text-dark" do %>
+              <%= post.title %>
+              </span>
+
   　         <% end %>
-  　         
+
    　　　</p>
 
   　　　　<p class="card-text">内容：<%= post.content %></p>
-  　　　　
+
         <span><%= link_to "#{post.post_comments.count} コメント", user_post_path(post.id), class:"text-dark" %></span>
 
   　　</div>
-  　　
+
     </div>
   </div>
 
