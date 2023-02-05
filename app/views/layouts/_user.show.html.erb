@@ -1,10 +1,10 @@
 <!-- ユーザーの詳細 -->
 <div class="card-list-container py-5">
-  
+
   <div class="card w-50 mx-auto mt-4 shadow-lg">
-    
+
     <div class="card-body">
-      
+
   <h3><%= @user.name %></h3>
   <%= image_tag @user.get_profile_image(100,100) %>
 
@@ -12,18 +12,18 @@
   <p><%= link_to "プロフィール編集", edit_user_user_path(@user.id) %></p>
   <p><%= link_to "いいねした投稿", favorites_user_user_path(@user.id) %></p>
   <% end %>
-  
+
     </div>
-    
+
   </div>
-  
+
 </div>
 <!-- ユーザーの投稿一覧 -->
 
 <div class="card-list-container py-5">
-  
+
   <div class="card w-50 mx-auto mt-4 shadow-lg">
-    
+
     <div class="card-body">
 
 <% @posts.each do |post| %>
@@ -40,7 +40,7 @@
 <% end %>
 
     </div>
-    
+
   </div>
-  
+
 </div>
