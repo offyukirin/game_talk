@@ -12,6 +12,7 @@ class Post < ApplicationRecord
   has_many :tags, through: :post_tags
 
   #titleとcontentが存在しているかを確認するバリデーション
+  #文字数制限なし
   validates :title, presence: true
   validates :content, presence: true
 
