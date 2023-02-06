@@ -35,6 +35,6 @@ Post.create!(
     {title: '召喚獣を手に入れろ', content: '召喚獣を入手すると戦闘が楽になります', user_id: users[1].id },
     {title: 'ラディカルビーム！！！', content: '草原のある位置で連打すると裏世界に行けます！', user_id: users[2].id },
     {title: '金策', content: 'バトルポイントでボールを買いショップで売る。', user_id: users[3].id },
-    {title: '最強の剣の作り方', content: '溶岩地帯で手に入る鉱石がいい！', user_id: users[4].id }
+    {title: '最後のパズルの攻略法', content: '５手目に青を使用します！', user_id: users[4].id }
   ]
 )
