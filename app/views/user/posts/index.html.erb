@@ -43,7 +43,7 @@
       <div class="col-10">
 
          <p class="card-title">
-
+           <% if user_signed_in? %>
             <span>
               <i class="fas fa-user"></i>
                 <%= link_to user_user_path(post.user.id), class:"text-dark" do %>
@@ -59,6 +59,21 @@
                   </span>
                 <% end %>
             </strong>
+           <% else %>
+            <span>
+              <i class="fas fa-user"></i>
+                <%= post.user.name, class:"text-dark" do %>
+                <% end %>
+            </span>
+
+            <strong>
+                <i class="far fa-flag"></i>
+                  <span>
+                    <%= post.title, class:"text-dark" do %>
+                  </span>
+                <% end %>
+            </strong>
+           <% end %>
 
 
    　　　</p>
