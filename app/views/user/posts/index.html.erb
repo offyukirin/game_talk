@@ -63,7 +63,7 @@
             <span>
               <i class="fas fa-user"></i>
                 <%= post.user.name %>
-                
+
             </span>
 
             <strong>
@@ -73,7 +73,7 @@
                   </span>
             <% end %>
             </strong>
-           
+
 
 
    　　　</p>
@@ -84,6 +84,8 @@
            <%= tag.name %>
            <% end %>
         </p>
+
+        <p>投稿日：<%= post.created_at.strftime('%Y/%m/%d') %></p>
 
       <% if user_signed_in? %>
         <span><%= link_to "#{post.post_comments.count} コメント", user_post_path(post.id), class:"text-dark" %></span>
