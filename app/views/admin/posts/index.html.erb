@@ -37,9 +37,9 @@
 
        <p><%= image_tag post.user.get_profile_image(100,100) , class:"mt-3 rounded-circle"; %></p>
 
-  　　</div>
+      </div>
 
-  　　<div class="col-10">
+      <div class="col-10">
 
          <p class="card-title">
 
@@ -60,18 +60,18 @@
             </strong>
 
 
-   　　　</p>
+         </p>
 
-  　　　　<p class="card-text">内容：<%= post.content %></p>
+         <p class="card-text">内容：<%= post.content %></p>
 
-        <p><% post.tags.each do |tag| %>
+         <p><% post.tags.each do |tag| %>
            <%= tag.name %>
            <% end %>
-        </p>
+         </p>
 
-        <span><%= link_to "#{post.post_comments.count} コメント", admin_post_path(post.id), class:"text-dark" %></span>
+         <span><%= link_to "#{post.post_comments.count} コメント", admin_post_path(post.id), class:"text-dark" %></span>
 
-  　　</div>
+      </div>
 
     </div>
 
